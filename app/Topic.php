@@ -15,6 +15,14 @@ class Topic extends Model
 	    	$topic = new Topic();
 	    	$topic->name = $name;
 	    	$topic->save();
+	    	return $topic;
+	    }catch (ModelNotFoundException $e){
+	            return $e;
+	    } 
+	}
+	public static function getTopics(){
+	    try {
+	    	return Topic::get();
 	    }catch (ModelNotFoundException $e){
 	            return $e;
 	    } 

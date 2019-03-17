@@ -13,3 +13,5 @@
 
 Route::get('/', 'HomeController@welcome');
 Route::post('/saveTopic', 'HomeController@saveTopic');
+Route::post('/getTopic', 'HomeController@getTopic');
+Route::post('/getData', 'HomeController@getData');
