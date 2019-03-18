@@ -31,7 +31,7 @@ class Data extends Model
     public static function getDataByTopic($topicIds){
         try {
             return Data::whereIn('id',$topicIds)
-            			->get();
+            			->paginate(2);
 
         } catch (ModelNotFoundException $e) {
             return $e;
@@ -40,8 +40,8 @@ class Data extends Model
     public static function getDatabyFilter($strDate,$endDate,$domain){
     	try {
             return Data::where('articles_source_id', 'LIKE','%' .$domain. '%' )
-            			//->whereBetween('articles_published_at',array($strDate,$endDate))
-            			->get();
+            			->whereBetween('articles_published_at',array($strDate,$endDate))
+            			->paginate(2);
 
         } catch (ModelNotFoundException $e) {
             return $e;

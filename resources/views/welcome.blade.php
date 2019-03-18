@@ -160,6 +160,21 @@
                 });
 
                 });
+                $(".page-link").click(function(event){
+                    event.preventDefault();
+                    alert('Page link clicked');
+                // $.ajax({
+                //     url: "/getTopic",
+                //     type: 'POST',
+                //     data: {topicId : topicId},
+                //     dataType: 'html',
+                //     success: function (data) {
+                //         //alert(data.status);
+                //         $("#topic-results").html(data)
+                        
+                //     }
+                // });
+                });
         });
     </script>
 </html>
